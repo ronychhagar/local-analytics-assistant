@@ -19,15 +19,15 @@ def generate_response(prompt: str, model: str = DEFAULT_MODEL) -> str:
     return result.get("response", "").strip()
 
 
-st.set_page_config(page_title="BMW Local Chatbot", page_icon="🤖", layout="wide")
-st.title("BMW Local Chatbot")
+st.set_page_config(page_title="Local Chatbot", page_icon="🤖", layout="wide")
+st.title("Local Chatbot")
 st.caption("A minimal local chat UI powered by Ollama.")
 
 if "model_name" not in st.session_state:
     st.session_state.model_name = DEFAULT_MODEL
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "assistant", "content": "Hello! Ask me anything about the BMW tasks or the local LLM setup."}
+        {"role": "assistant", "content": "Hello! Ask me anything about the local task setup or the LLM configuration."}
     ]
 
 with st.sidebar:

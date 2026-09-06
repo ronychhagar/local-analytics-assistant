@@ -15,7 +15,7 @@ HTML_PAGE = """
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BMW Local Chatbot</title>
+    <title>Local Chatbot</title>
     <style>
       :root {
         --bg: #101827;
@@ -111,7 +111,7 @@ HTML_PAGE = """
   </head>
   <body>
     <div class="app">
-      <div class="header">BMW Local Chatbot</div>
+      <div class="header">Local Chatbot</div>
       <div id="messages" class="messages"></div>
       <div class="status" id="status">Ready</div>
       <div class="composer">
@@ -169,7 +169,7 @@ HTML_PAGE = """
         }
       });
 
-      addMessage('Hello! Ask me anything about the BMW tasks or local model usage.', 'assistant');
+      addMessage('Hello! Ask me anything about the local task setup or model usage.', 'assistant');
     </script>
   </body>
 </html>
@@ -179,7 +179,7 @@ HTML_PAGE = """
 def generate_response(prompt: str, model: str = DEFAULT_MODEL, system_prompt: str | None = None) -> str:
     if system_prompt is None:
         system_prompt = (
-            "You are a helpful local BMW assistant. "
+            "You are a helpful local assistant. "
             "Answer clearly, concisely, and with practical engineering guidance."
         )
 
@@ -257,7 +257,7 @@ class ChatHandler(BaseHTTPRequestHandler):
 def run_ui(host: str = '127.0.0.1', port: int = 8000, open_browser: bool = True) -> None:
     server = ThreadingHTTPServer((host, port), ChatHandler)
     url = f'http://{host}:{port}/'
-    print(f'BMW chatbot UI running at {url}')
+    print(f'Local chatbot UI running at {url}')
     if open_browser:
         webbrowser.open(url)
     try:
@@ -268,7 +268,7 @@ def run_ui(host: str = '127.0.0.1', port: int = 8000, open_browser: bool = True)
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Run a minimal local HTML UI for the BMW chatbot.')
+    parser = argparse.ArgumentParser(description='Run a minimal local HTML UI for the chatbot.')
     parser.add_argument('--host', default='127.0.0.1', help='Host address to bind the UI to.')
     parser.add_argument('--port', type=int, default=8000, help='Port to serve the UI on.')
     parser.add_argument('--model', default=DEFAULT_MODEL, help='Ollama model to use.')

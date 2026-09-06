@@ -1,7 +1,7 @@
 [project]
-name = "bmw-tasks"
+name = "local-llm-data-tasks"
 version = "0.1.0"
-description = "Add your description here"
+description = "Local-first Python project for LLM, ML, and data-processing tasks"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [project.scripts]
-bmw-tasks = "bmw_tasks:main"
+local-llm-data-tasks = "local_llm_data_tasks:main"
 
 [build-system]
 requires = ["uv_build>=0.12.10,<0.13.0"]

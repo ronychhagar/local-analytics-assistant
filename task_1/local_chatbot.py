@@ -11,7 +11,7 @@ DEFAULT_MODEL = os.getenv("OLLAMA_MODEL", "llama3")
 def generate_response(prompt: str, model: str = DEFAULT_MODEL, system_prompt: Optional[str] = None) -> str:
     if system_prompt is None:
         system_prompt = (
-            "You are a helpful local BMW assistant. "
+            "You are a helpful local assistant. "
             "Answer clearly, concisely, and with practical engineering guidance."
         )
 
@@ -32,7 +32,7 @@ def generate_response(prompt: str, model: str = DEFAULT_MODEL, system_prompt: Op
 
 
 def interactive_chat(model: str = DEFAULT_MODEL) -> None:
-    print("Local BMW chatbot is ready. Type 'exit' to quit.")
+    print("Local chatbot is ready. Type 'exit' to quit.")
     while True:
         user_input = input("You: ").strip()
         if not user_input:
