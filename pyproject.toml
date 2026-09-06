@@ -1,0 +1,21 @@
+[project]
+name = "bmw-tasks"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=2.5.2",
+    "pandas>=3.0.5",
+    "pytest>=9.1.1",
+    "requests>=2.34.2",
+    "scikit-learn>=1.9.0",
+    "streamlit>=1.63.0",
+]
+
+[project.scripts]
+bmw-tasks = "bmw_tasks:main"
+
+[build-system]
+requires = ["uv_build>=0.12.10,<0.13.0"]
+build-backend = "uv_build"
